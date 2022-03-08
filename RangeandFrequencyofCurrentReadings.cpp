@@ -77,7 +77,7 @@ string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount,i
     int rangeUpper = currentRangeandCount.rangeUpper ;
 	int count            = currentRangeandCount.count;
     string temp = "[" + to_string(rangeLower) + "-" + to_string(rangeUpper) + "]" + "->" + to_string(count) ;
-	if(min_elementIndex == max_elementIndex)
+	if(rangeUpper == rangeLower)
 	{
 		temp = "[" + to_string(rangeLower) + "]"+ "->" + to_string(count);
 	}
