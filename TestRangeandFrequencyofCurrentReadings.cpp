@@ -15,9 +15,9 @@ void testOutputRangeandCount(){
 
  Observed_range_count_list = GetRangesAndFrequentValue(testInput,9);
 
-  //assert(Observed_range_count_list[0].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[0].rangeValuesAndCount.rangeLower);
-  //assert(Observed_range_count_list[1].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[1].rangeValuesAndCount.rangeLower);
- // assert(Observed_range_count_list[2].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[2].rangeValuesAndCount.rangeLower);
+  assert(Observed_range_count_list[0].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[0].rangeValuesAndCount.rangeLower);
+  assert(Observed_range_count_list[1].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[1].rangeValuesAndCount.rangeLower);
+  assert(Observed_range_count_list[2].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[2].rangeValuesAndCount.rangeLower);
 
 
   assert(Observed_range_count_list[0].rangeValuesAndCount.rangeUpper ==  Expected_range_count_list[0].rangeValuesAndCount.rangeUpper);
