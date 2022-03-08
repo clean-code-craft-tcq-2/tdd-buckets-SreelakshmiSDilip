@@ -71,21 +71,19 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 
     return combined_range_count_list;
 }
-
 string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount,int inputValues[] )
 {
-	int min_elementIndex = currentRangeandCount.rangeLower ;
-    int max_elementIndex = currentRangeandCount.rangeUpper ;
+	int rangeLower = currentRangeandCount.rangeLower ;
+    int rangeUpper = currentRangeandCount.rangeUpper ;
 	int count            = currentRangeandCount.count;
-    string temp = "[" + to_string(inputValues[min_elementIndex]) + "-" + to_string(max_elementIndex) + "]" + "->" + to_string(count) ;
+    string temp = "[" + to_string(rangeLower) + "-" + to_string(rangeUpper) + "]" + "->" + to_string(count) ;
 	if(min_elementIndex == max_elementIndex)
 	{
-		temp = "[" + to_string(inputValues[min_elementIndex]) + "]"+ "->" + to_string(count);
+		temp = "[" + to_string(rangeLower) + "]"+ "->" + to_string(count);
 	}
 	//range_list.push_back(temp);
 	return temp;
 }
-
 
 
 
