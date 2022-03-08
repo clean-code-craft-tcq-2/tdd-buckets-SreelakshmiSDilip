@@ -77,7 +77,7 @@ string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCoun
 	int min_elementIndex = currentIndicesandCount.min_Index ;
     int max_elementIndex = currentIndicesandCount.max_Index ;
 	int count            = currentIndicesandCount.count;
-    string temp = "[" + to_string(inputValues[min_elementIndex]) + "-" + to_string(max_elementIndex) + "]" + "->" to_string(count) ;
+    string temp = "[" + to_string(inputValues[min_elementIndex]) + "-" + to_string(max_elementIndex) + "]" + "->" + to_string(count) ;
 	if(min_elementIndex == max_elementIndex)
 	{
 		temp = "[" + to_string(inputValues[min_elementIndex]) + "]"+ "->" to_string(count);
