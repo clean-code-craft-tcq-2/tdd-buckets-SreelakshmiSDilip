@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 
 #include "test/catch.hpp"
-#include "FrequentCurrentValueAndRange.h"
+#include "RangeandFrequencyofCurrentReadings.h"
 
 TEST_CASE("get the range and count from the readings ") {
  int testInput[9] = {2,3,4,5,8,9,9,10,12};
