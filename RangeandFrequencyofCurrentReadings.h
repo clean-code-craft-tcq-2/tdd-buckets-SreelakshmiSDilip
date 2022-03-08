@@ -4,12 +4,11 @@
 #include <iostream>
 #include <vector>
 #include<numeric>
-#include <string>
-
 
 #pragma once
-using namespace std;
+//using namespace std;
 const int c_NOTVALID =255;
+
 typedef struct __length__{
   int int_count;
   string char_count;
@@ -27,5 +26,5 @@ typedef struct __numAndString__{
 }StringandNumRangeOutput;
 
 
-vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[]);
-string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCount);
+vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int* inputValues);
+string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCount , int* inputValues );
