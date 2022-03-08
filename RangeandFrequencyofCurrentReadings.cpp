@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 
-//using namespace std;
+using namespace std;
 
 
 
@@ -74,9 +74,9 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[])
 
 string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCount )
 {
-	uint8 min_elementIndex = currentIndicesandCount.min_Index ;
-    uint8 max_elementIndex = currentIndicesandCount.max_Index ;
-	uint8 count            = currentIndicesandCount.count;
+	int min_elementIndex = currentIndicesandCount.min_Index ;
+    int max_elementIndex = currentIndicesandCount.max_Index ;
+	int count            = currentIndicesandCount.count;
     string temp = "[" + to_string(inputValues[min_elementIndex]) + "-" + to_string(max_elementIndex) + "]" + "->" to_string(count) ;
 	if(min_elementIndex == max_elementIndex)
 	{
