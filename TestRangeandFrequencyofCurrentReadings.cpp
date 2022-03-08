@@ -11,7 +11,7 @@ TEST_CASE("get the range and count from the readings ") {
  Expected_range_count_list[1]->numIndexAndCount ={8,10,4};
  Expected_range_count_list[2]->numIndexAndCount ={12,1};
 
- Observed_range_count_list = GetRangesAndFrequentValue(testInput);
+ Observed_range_count_list = GetRangesAndFrequentValue(&testInput);
 
   REQUIRE(Observed_range_count_list[0]->numIndexAndCount ==  Expected_range_count_list[0]->numIndexAndCount);
   REQUIRE(Observed_range_count_list[1]->numIndexAndCount ==  Expected_range_count_list[1]->numIndexAndCount);
@@ -22,13 +22,14 @@ TEST_CASE("get the range and count from the readings ") {
 
 
 TEST_CASE("Get the range and count values combined as a string ") {
+	int testReadings[9] = {2,3,4,5,8,9,9,10,12};
 	RangeIndicesandCount testInput1 = {2,5,4};
 	RangeIndicesandCount testInput2 = {8,10,4};
 	RangeIndicesandCount testInput3 = {12};
  
-  REQUIRE(GetCombinedRangeandCountString(testInput1) == "[2-5]->4);
-  REQUIRE(GetCombinedRangeandCountString(testInput2)  == "[8-10]->4");
-  REQUIRE(GetCombinedRangeandCountString(testInput3) == "[12]->1");
+  REQUIRE(GetCombinedRangeandCountString(testInput1,&testReadings) == "[2-5]->4);
+  REQUIRE(GetCombinedRangeandCountString(testInput2,&testReadings)  == "[8-10]->4");
+  REQUIRE(GetCombinedRangeandCountString(testInput3,&testReadings) == "[12]->1");
 }
 
 
