@@ -16,7 +16,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 	//sort the array
 	//sort(inputValues, inputValues + numOfElements);
 	//find the ranges
-	vector<StringandNumRangeOutput> combined_range_count_list;
+	vector<StringandNumRangeOutput*> combined_range_count_list;
 
 
 	// If the array is empty,
