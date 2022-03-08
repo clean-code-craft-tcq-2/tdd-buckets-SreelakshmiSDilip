@@ -11,7 +11,7 @@
 
 vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int numOfElements)
 {
-	
+
 	int length = 1;
 	//sort the array
 	sort(inputValues, inputValues + numOfElements);
@@ -42,14 +42,14 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
             // If the range contains
             // only one element.
             // add it into the range_list.
-			RangeIndicesandCount currentIndicesandCount;
-			currentIndicesandCount.min_Index =  iter - length;
-            currentIndicesandCount.max_Index =  iter - 1;
-			currentIndicesandCount.count = length;
+			RangeValuesAndCount currentRangeandCount;
+			currentRangeandCount.rangeLower=  inputValues[iter - length];
+            currentRangeandCount.rangeUpper =  inputValues[iter - 1];
+			currentRangeandCount.count = length;
 
 			
-            string rangeString = GetRangeandCountOutputAsString(currentIndicesandCount,inputValues);
-			rangeFromReadingOutput.numIndexAndCount = currentIndicesandCount;
+            string rangeString = GetRangeandCountOutputAsString(currentRangeandCount,inputValues);
+			rangeFromReadingOutput.rangeValuesAndCount = currentRangeandCount;
 			rangeFromReadingOutput.stringIndexAndCount = rangeString;
 
 
@@ -72,11 +72,11 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
     return combined_range_count_list;
 }
 
-string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCount,int inputValues[] )
+string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount,int inputValues[] )
 {
-	int min_elementIndex = currentIndicesandCount.min_Index ;
-    int max_elementIndex = currentIndicesandCount.max_Index ;
-	int count            = currentIndicesandCount.count;
+	int min_elementIndex = currentRangeandCount.rangeLower ;
+    int max_elementIndex = currentRangeandCount.rangeUpper ;
+	int count            = currentRangeandCount.count;
     string temp = "[" + to_string(inputValues[min_elementIndex]) + "-" + to_string(max_elementIndex) + "]" + "->" + to_string(count) ;
 	if(min_elementIndex == max_elementIndex)
 	{
