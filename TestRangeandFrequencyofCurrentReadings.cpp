@@ -36,11 +36,11 @@ void testOutRangeandCountString() {
 	int testReadings[9] = {2,3,4,5,8,9,9,10,12};
 	RangeValuesAndCount testInput1 = {2,5,4};
 	RangeValuesAndCount testInput2 = {8,10,4};
-	RangeValuesAndCount testInput3 = {12,c_NOTVALID};
+	RangeValuesAndCount testInput3 = {12,c_NOTVALID,1};
  
-  assert(GetCombinedRangeandCountString(testInput1,testReadings) == "[2-5]->4");
-  assert(GetCombinedRangeandCountString(testInput2,testReadings)  == "[8-10]->4");
-  assert(GetCombinedRangeandCountString(testInput3,testReadings) == "[12]->1");
+  assert(GetRangeandCountOutputAsString(testInput1,testReadings) == "[2-5]->4");
+  assert(GetRangeandCountOutputAsString(testInput2,testReadings)  == "[8-10]->4");
+  assert(GetRangeandCountOutputAsString(testInput3,testReadings) == "[12]->1");
 }
 
 int main()
