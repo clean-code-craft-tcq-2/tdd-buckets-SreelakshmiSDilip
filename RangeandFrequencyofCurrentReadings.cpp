@@ -12,19 +12,19 @@
 vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int numOfElements)
 {
 
-	int length = 1;
+	//int length = 1;
 	//sort the array
-	sort(inputValues, inputValues + numOfElements);
+	//sort(inputValues, inputValues + numOfElements);
 	//find the ranges
 	vector<StringandNumRangeOutput> combined_range_count_list;
 
 
 	// If the array is empty,
 	// return the range_list
-	if (numOfElements == 0)
+	/*if (numOfElements == 0)
 	{
 		return combined_range_count_list;
-	}
+	}*/
 
 	// Traverse the array from first position
 	/*for(int iter = 1; iter < numOfElements; iter++)
