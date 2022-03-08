@@ -13,9 +13,9 @@ TEST_CASE("get the range and count from the readings ") {
 
  Observed_range_count_list = GetRangesAndFrequentValue(testInput,9);
 
-  REQUIRE(Observed_range_count_list[0]->numIndexAndCount ==  Expected_range_count_list[0]->numIndexAndCount);
-  REQUIRE(Observed_range_count_list[1]->numIndexAndCount ==  Expected_range_count_list[1]->numIndexAndCount);
-  REQUIRE(Observed_range_count_list[2]->numIndexAndCount ==  Expected_range_count_list[2]->numIndexAndCount);
+  REQUIRE(Observed_range_count_list[0].numIndexAndCount ==  Expected_range_count_list[0].numIndexAndCount);
+  REQUIRE(Observed_range_count_list[1].numIndexAndCount ==  Expected_range_count_list[1].numIndexAndCount);
+  REQUIRE(Observed_range_count_list[2].numIndexAndCount ==  Expected_range_count_list[2].numIndexAndCount);
 
 }
 
