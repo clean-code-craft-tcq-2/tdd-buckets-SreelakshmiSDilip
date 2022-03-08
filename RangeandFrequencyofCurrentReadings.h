@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #include<numeric>
+#include <string>
+
 
 #pragma once
 //using namespace std;
