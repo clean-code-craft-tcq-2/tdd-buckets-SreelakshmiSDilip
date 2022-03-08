@@ -9,7 +9,7 @@
 
 
 
-vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int* inputValues)
+vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[])
 {
 	int numOfElements = sizeof(inputValues)/sizeof(inputValues[0]);
 	int length = 1;
@@ -48,7 +48,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int* inputValues)
 			currentIndicesandCount.count = length;
 
 			
-            string rangeString = GetRangeandCountOutputAsString(currentIndicesandCount,&inputValues);
+            string rangeString = GetRangeandCountOutputAsString(currentIndicesandCount,inputValues);
 			rangeFromReadingOutput.numIndexAndCount = currentIndicesandCount;
 			rangeFromReadingOutput.stringIndexAndCount = rangeString;
 
@@ -72,7 +72,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int* inputValues)
     return combined_range_count_list;
 }
 
-string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCount,int* inputValues )
+string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCount,int inputValues[] )
 {
 	int min_elementIndex = currentIndicesandCount.min_Index ;
     int max_elementIndex = currentIndicesandCount.max_Index ;
