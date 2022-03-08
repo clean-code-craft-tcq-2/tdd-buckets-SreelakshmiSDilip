@@ -6,7 +6,7 @@
 #include<numeric>
 
 #pragma once
-//using namespace std;
+using namespace std;
 const int c_NOTVALID =255;
 
 typedef struct __length__{
