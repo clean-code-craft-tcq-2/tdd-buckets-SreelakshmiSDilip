@@ -1,4 +1,4 @@
-#include "FrequentCurrentValueAndRange.h"
+#include "RangeandFrequencyofCurrentReadings.h"
 #include <stdio.h>
 #include<bits/stdc++.h>
 #include <algorithm>
