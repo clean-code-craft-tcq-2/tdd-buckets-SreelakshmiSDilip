@@ -15,16 +15,16 @@ typedef struct __length__{
 }Rangelength;
 
 typedef struct __index__{
-  int min_Index;
-  int max_Index;
+  int rangeLower;
+  int rangeUpper;
   int count;
-}RangeIndicesandCount;
+}RangeValuesAndCount;
 
 typedef struct __numAndString__{
-	RangeIndicesandCount numIndexAndCount;
+	RangeValuesAndCount rangeValuesAndCount;
 	string stringIndexAndCount;
 }StringandNumRangeOutput;
 
 
 vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int numOfElements);
-string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCount , int inputValues[] );
+string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount , int inputValues[] );
