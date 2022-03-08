@@ -65,7 +65,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 
 		}
 
-		//combined_range_count_list.push_back(rangeFromReadingOutput);
+		combined_range_count_list.push_back(rangeFromReadingOutput);
 	}
 
 
