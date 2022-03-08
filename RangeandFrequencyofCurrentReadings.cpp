@@ -21,9 +21,9 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 
 	// If the array is empty,
 	// return the range_list
-	if (numOfElements == 0)
+	//if (numOfElements == 0)
 	{
-		return combined_range_count_list;
+		//return combined_range_count_list;
 	}
 
 	// Traverse the array from first position
@@ -43,8 +43,8 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			// only one element.
 			// add it into the range_list.
 			RangeValuesAndCount currentRangeandCount;
-			currentRangeandCount.rangeLower=  inputValues[iter - length];
-			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
+			//currentRangeandCount.rangeLower=  inputValues[iter - length];
+			//currentRangeandCount.rangeUpper =  inputValues[iter - 1];
 			currentRangeandCount.count = length;
              
 
