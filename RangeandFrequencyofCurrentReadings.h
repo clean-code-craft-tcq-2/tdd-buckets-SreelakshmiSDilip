@@ -26,5 +26,5 @@ typedef struct __numAndString__{
 }StringandNumRangeOutput;
 
 
-vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int* inputValues);
-string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCount , int* inputValues );
+vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[]);
+string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCount , int inputValues[] );
