@@ -45,8 +45,10 @@ void testOutRangeandCountString() {
 
 int main()
 {
-	testOutputRangeandCount();
+	
 	testOutRangeandCountString();
+	std::cout<<"here";
+	testOutputRangeandCount();
 	return 0;
 }
 
