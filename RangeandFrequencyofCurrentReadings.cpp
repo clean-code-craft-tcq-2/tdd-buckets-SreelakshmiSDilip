@@ -11,7 +11,7 @@
 
 vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[])
 {
-	int numOfElements = sizeof(inputValues)/sizeof(inputValues[0]);
+	int numOfElements = sizeof(inputValues)/sizeof(*inputValues);
 	int length = 1;
 	//sort the array
 	sort(inputValues, inputValues + numOfElements);
