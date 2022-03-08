@@ -27,7 +27,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 	}
 
 	// Traverse the array from first position
-	for(int iter = 1; iter <= numOfElements; iter++)
+	for(int iter = 1; iter < numOfElements; iter++)
 	{
 
 		StringandNumRangeOutput rangeFromReadingOutput;
