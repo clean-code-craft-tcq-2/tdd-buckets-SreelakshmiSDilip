@@ -2,6 +2,7 @@
 
 //#include "catch.hpp"
 #include <assert.h>
+#include <iostream>
 #include "RangeandFrequencyofCurrentReadings.h"
 
 void testOutputRangeandCount(){
