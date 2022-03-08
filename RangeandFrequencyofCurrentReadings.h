@@ -8,7 +8,7 @@
 
 
 #pragma once
-//using namespace std;
+using namespace std;
 const int c_NOTVALID =255;
 static int s_count= 0;
 typedef struct __length__{
