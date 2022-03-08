@@ -80,7 +80,7 @@ string GetRangeandCountOutputAsString(RangeIndicesandCount currentIndicesandCoun
     string temp = "[" + to_string(inputValues[min_elementIndex]) + "-" + to_string(max_elementIndex) + "]" + "->" + to_string(count) ;
 	if(min_elementIndex == max_elementIndex)
 	{
-		temp = "[" + to_string(inputValues[min_elementIndex]) + "]"+ "->" to_string(count);
+		temp = "[" + to_string(inputValues[min_elementIndex]) + "]"+ "->" + to_string(count);
 	}
 	//range_list.push_back(temp);
 	return temp;
