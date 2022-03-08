@@ -38,6 +38,7 @@ int main()
 {
 	testOutputRangeandCount();
 	testOutRangeandCountString();
+	return 0;
 
 }
 
