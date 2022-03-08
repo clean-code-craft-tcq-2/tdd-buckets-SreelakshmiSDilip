@@ -27,7 +27,7 @@ TEST_CASE("Get the range and count values combined as a string ") {
 	RangeIndicesandCount testInput2 = {8,10,4};
 	RangeIndicesandCount testInput3 = {12};
  
-  REQUIRE(GetCombinedRangeandCountString(testInput1,testReadings) == "[2-5]->4);
+  REQUIRE(GetCombinedRangeandCountString(testInput1,testReadings) == "[2-5]->4");
   REQUIRE(GetCombinedRangeandCountString(testInput2,testReadings)  == "[8-10]->4");
   REQUIRE(GetCombinedRangeandCountString(testInput3,testReadings) == "[12]->1");
 }
