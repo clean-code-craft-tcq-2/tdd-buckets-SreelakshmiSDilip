@@ -43,8 +43,8 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			// only one element.
 			// add it into the range_list.
 			RangeValuesAndCount currentRangeandCount;
-			currentRangeandCount.rangeLower=  inputValues[iter - length];
-			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
+			currentRangeandCount.rangeLower= 0;// inputValues[iter - length];
+			currentRangeandCount.rangeUpper = 0;// inputValues[iter - 1];
 			currentRangeandCount.count = length;
              
 
