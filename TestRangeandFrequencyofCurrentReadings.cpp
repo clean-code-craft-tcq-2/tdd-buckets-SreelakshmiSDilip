@@ -11,7 +11,7 @@ void testOutputRangeandCount(){
  vector<StringandNumRangeOutput> Expected_range_count_list;
  Expected_range_count_list[0].rangeValuesAndCount = {2,5,4};
  Expected_range_count_list[1].rangeValuesAndCount ={8,10,4};
- Expected_range_count_list[2].rangeValuesAndCount ={12,c_NOTVALID,1};
+ Expected_range_count_list[2].rangeValuesAndCount ={12,12,1};
 
  Observed_range_count_list = GetRangesAndFrequentValue(testInput,9);
 
@@ -36,7 +36,7 @@ void testOutRangeandCountString() {
 	int testReadings[9] = {2,3,4,5,8,9,9,10,12};
 	RangeValuesAndCount testInput1 = {2,5,4};
 	RangeValuesAndCount testInput2 = {8,10,4};
-	RangeValuesAndCount testInput3 = {12,c_NOTVALID,1};
+	RangeValuesAndCount testInput3 = {12,12,1};
  
   assert(GetRangeandCountOutputAsString(testInput1,testReadings) == "[2-5]->4");
   assert(GetRangeandCountOutputAsString(testInput2,testReadings)  == "[8-10]->4");
