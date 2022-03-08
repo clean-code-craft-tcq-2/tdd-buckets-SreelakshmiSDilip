@@ -3,6 +3,8 @@
 #include<bits/stdc++.h>
 #include <algorithm>
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 
