@@ -5,34 +5,23 @@
 #include <iostream>
 #include <string>
 
-//using namespace std;
-
-
-
 vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int numOfElements)
 {
-
 	int length = 1;
 	//sort the array
 	sort(inputValues, inputValues + numOfElements);
 	//find the ranges
 	vector<StringandNumRangeOutput> combined_range_count_list;
-
-
 	// Traverse the array from first position
 	for(int iter = 1; iter <= numOfElements; iter++)
 	{
-
-		
-
 		// Check the difference between the
 		// current and the previous elements
 		// If the difference doesn't equal to 1
 		// just increment the length variable.
 		if (iter == numOfElements || inputValues[iter] - inputValues[iter - 1] > 1)
 		{
-
-			// If the range contains
+                	// If the range contains
 			// only one element.
 			// add it into the range_list.
 			StringandNumRangeOutput rangeFromReadingOutput;
@@ -42,9 +31,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
 			currentRangeandCount.count = length;
 
-             
-
-			string rangeString = GetRangeandCountOutputAsString(currentRangeandCount,inputValues);
+                        string rangeString = GetRangeandCountOutputAsString(currentRangeandCount,inputValues);
 			rangeFromReadingOutput.rangeValuesAndCount = currentRangeandCount;
 			rangeFromReadingOutput.stringIndexAndCount = rangeString;
                         combined_range_count_list.push_back(rangeFromReadingOutput);
@@ -53,15 +40,11 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			// initialize the length by 1 to
 			// build the next range.
 			length = 1;
-
 		}
 		else
 		{
 			length++;
-
-		}
-
-		
+		}	
 	}
 
 
