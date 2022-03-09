@@ -8,10 +8,14 @@
 void testOutputRangeandCount(){
  int testInput[9] = {2,3,4,5,8,9,9,10,12};
  vector<StringandNumRangeOutput> Observed_range_count_list;
-// vector<StringandNumRangeOutput> Expected_range_count_list;
-// Expected_range_count_list[0].rangeValuesAndCount = {2,5,4};
-// Expected_range_count_list[1].rangeValuesAndCount ={8,10,4};
-// Expected_range_count_list[2].rangeValuesAndCount ={12,12,1};
+ vector<StringandNumRangeOutput> Expected_range_count_list;
+ StringandNumRangeOutput ExpectedStringAndNumRangeOutput;
+ ExpectedStringAndNumRangeOutput.rangeValuesAndCount = {2,5,4};
+ Expected_range_count_list.push_back(ExpectedStringAndNumRangeOutput);
+ ExpectedStringAndNumRangeOutput.rangeValuesAndCount ={8,10,4};
+ Expected_range_count_list.push_back(ExpectedStringAndNumRangeOutput);
+ ExpectedStringAndNumRangeOutput.rangeValuesAndCount ={12,12,1};
+ Expected_range_count_list.push_back(ExpectedStringAndNumRangeOutput);
 
  Observed_range_count_list = GetRangesAndFrequentValue(testInput,9);
 
