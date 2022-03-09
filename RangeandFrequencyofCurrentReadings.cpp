@@ -44,9 +44,11 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			// add it into the range_list.
 			StringandNumRangeOutput rangeFromReadingOutput;
 			RangeValuesAndCount currentRangeandCount;
+
 			currentRangeandCount.rangeLower=  inputValues[iter - length];
 			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
 			currentRangeandCount.count = length;
+
              
 
 			string rangeString = GetRangeandCountOutputAsString(currentRangeandCount,inputValues);
