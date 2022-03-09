@@ -30,7 +30,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 	for(int iter = 1; iter < numOfElements; iter++)
 	{
 
-		StringandNumRangeOutput rangeFromReadingOutput;
+		
 
 		// Check the difference between the
 		// current and the previous elements
@@ -42,6 +42,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			// If the range contains
 			// only one element.
 			// add it into the range_list.
+			StringandNumRangeOutput rangeFromReadingOutput;
 			RangeValuesAndCount currentRangeandCount;
 			currentRangeandCount.rangeLower=  inputValues[iter - length];
 			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
