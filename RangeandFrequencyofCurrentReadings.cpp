@@ -11,7 +11,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 	//sort the array
 	sort(inputValues, inputValues + numOfElements);
 	//find the ranges
-	vector<StringandNumRangeOutput> combined_range_count_list;
+	vector<StringandNumRangeOutput> combinedRangeCountList;
 	// Traverse the array from first position
 	for(int iter = 1; iter <= numOfElements; iter++)
 	{
@@ -21,7 +21,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 		// just increment the length variable.
 		if (iter == numOfElements || inputValues[iter] - inputValues[iter - 1] > 1)
 		{
-                	// If the range contains
+			// If the range contains
 			// only one element.
 			// add it into the range_list.
 			StringandNumRangeOutput rangeFromReadingOutput;
@@ -31,10 +31,10 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
 			currentRangeandCount.count = length;
 
-                        string rangeString = GetRangeandCountOutputAsString(currentRangeandCount,inputValues);
+			string rangeString = GetRangeandCountOutputAsString(currentRangeandCount,inputValues);
 			rangeFromReadingOutput.rangeValuesAndCount = currentRangeandCount;
 			rangeFromReadingOutput.stringIndexAndCount = rangeString;
-                        combined_range_count_list.push_back(rangeFromReadingOutput);
+			combinedRangeCountList.push_back(rangeFromReadingOutput);
 
 			// After finding the first range
 			// initialize the length by 1 to
@@ -48,7 +48,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 	}
 
 
-	return combined_range_count_list;
+	return combinedRangeCountList;
 }
 
 string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount,int inputValues[])
