@@ -7,13 +7,13 @@
 
 void testOutputRangeandCount(){
  int testInput[9] = {2,3,4,5,8,9,9,10,12};
- //vector<StringandNumRangeOutput> Observed_range_count_list;
+ vector<StringandNumRangeOutput> Observed_range_count_list;
 // vector<StringandNumRangeOutput> Expected_range_count_list;
 // Expected_range_count_list[0].rangeValuesAndCount = {2,5,4};
 // Expected_range_count_list[1].rangeValuesAndCount ={8,10,4};
 // Expected_range_count_list[2].rangeValuesAndCount ={12,12,1};
 
-// Observed_range_count_list = GetRangesAndFrequentValue(testInput,9);
+ Observed_range_count_list = GetRangesAndFrequentValue(testInput,9);
 
   /*assert(Observed_range_count_list[0].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[0].rangeValuesAndCount.rangeLower);
   assert(Observed_range_count_list[1].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[1].rangeValuesAndCount.rangeLower);
@@ -28,7 +28,7 @@ void testOutputRangeandCount(){
   assert(Observed_range_count_list[1].rangeValuesAndCount.count ==  Expected_range_count_list[1].rangeValuesAndCount.count);
   assert(Observed_range_count_list[2].rangeValuesAndCount.count ==  Expected_range_count_list[2].rangeValuesAndCount.count);*/
 	
-	 GetRangesAndFrequentValue(testInput,9);
+	 
 
 }
 
