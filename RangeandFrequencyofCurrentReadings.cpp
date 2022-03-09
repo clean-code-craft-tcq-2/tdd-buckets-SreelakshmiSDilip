@@ -36,7 +36,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 		// current and the previous elements
 		// If the difference doesn't equal to 1
 		// just increment the length variable.
-		if (iter == numOfElements || inputValues[iter] - inputValues[iter - 1] <= 1)
+		if (iter == numOfElements || inputValues[iter] - inputValues[iter - 1] >= 1)
 		{
 
 			// If the range contains
