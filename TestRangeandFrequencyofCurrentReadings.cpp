@@ -37,8 +37,6 @@ TEST_CASE("Get the range and frequency of occurance for each range in numerical 
 
 }
 
-
-
 TEST_CASE("Get the range and count string output for range and count numerical input"){
 	
 	RangeValuesAndCount testInput1 = {2,5,4};
