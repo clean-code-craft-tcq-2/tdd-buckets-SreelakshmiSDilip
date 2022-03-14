@@ -26,15 +26,14 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			// add it into the range_list.
 			StringandNumRangeOutput rangeFromReadingOutput;
 			RangeValuesAndCount currentRangeandCount;
-			string rangeString;
+			
 
 			currentRangeandCount.rangeLower=  inputValues[iter - length];
 			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
 			currentRangeandCount.count = length;
 
-		        rangeString = GetRangeandCountOutputAsString(currentRangeandCount);
 			rangeFromReadingOutput.rangeValuesAndCount = currentRangeandCount;
-			rangeFromReadingOutput.stringIndexAndCount = rangeString;
+			rangeFromReadingOutput.stringIndexAndCount = GetRangeandCountOutputAsString(currentRangeandCount);;
 			combinedRangeCountList.push_back(rangeFromReadingOutput);
 
 			// After finding the first range
