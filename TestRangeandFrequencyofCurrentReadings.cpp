@@ -39,15 +39,15 @@ TEST_CASE("Get the range and frequency of occurance for each range in numerical 
 
 
 
-TEST_CASE("Get the range and count output as a string for any input"){
-	int testReadings[9] = {2,3,4,5,8,9,9,10,12};
+TEST_CASE("Get the range and count string output for range and count numerical input"){
+	
 	RangeValuesAndCount testInput1 = {2,5,4};
 	RangeValuesAndCount testInput2 = {8,10,4};
 	RangeValuesAndCount testInput3 = {12,12,1};
 
-	REQUIRE(GetRangeandCountOutputAsString(testInput1,testReadings) == "[2-5]->4");
-	REQUIRE(GetRangeandCountOutputAsString(testInput2,testReadings)  == "[8-10]->4");
-	REQUIRE(GetRangeandCountOutputAsString(testInput3,testReadings) == "[12]->1");
+	REQUIRE(GetRangeandCountOutputAsString(testInput1) == "[2-5]->4");
+	REQUIRE(GetRangeandCountOutputAsString(testInput2)  == "[8-10]->4");
+	REQUIRE(GetRangeandCountOutputAsString(testInput3) == "[12]->1");
 }
 
 
