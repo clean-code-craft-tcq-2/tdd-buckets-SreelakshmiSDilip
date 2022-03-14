@@ -31,7 +31,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
 			currentRangeandCount.count = length;
 
-			string rangeString = GetRangeandCountOutputAsString(currentRangeandCount,inputValues);
+			string rangeString = GetRangeandCountOutputAsString(currentRangeandCount);
 			rangeFromReadingOutput.rangeValuesAndCount = currentRangeandCount;
 			rangeFromReadingOutput.stringIndexAndCount = rangeString;
 			combinedRangeCountList.push_back(rangeFromReadingOutput);
@@ -51,7 +51,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 	return combinedRangeCountList;
 }
 
-string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount,int inputValues[])
+string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount)
 {
 	int rangeLower = currentRangeandCount.rangeLower ;
 	int rangeUpper = currentRangeandCount.rangeUpper ;
