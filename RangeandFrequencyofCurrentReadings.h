@@ -23,4 +23,4 @@ const int c_NOTVALID =255;
 
 
 vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int numOfElements);
-string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount , int inputValues[] );
+string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount );
