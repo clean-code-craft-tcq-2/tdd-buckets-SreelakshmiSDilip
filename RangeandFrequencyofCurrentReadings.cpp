@@ -33,7 +33,7 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			currentRangeandCount.count = length;
 
 			rangeFromReadingOutput.rangeValuesAndCount = currentRangeandCount;
-			rangeFromReadingOutput.stringIndexAndCount = GetRangeandCountOutputAsString(currentRangeandCount);;
+			rangeFromReadingOutput.stringIndexAndCount = GetRangeandCountOutputAsString(currentRangeandCount);
 			combinedRangeCountList.push_back(rangeFromReadingOutput);
 
 			// After finding the first range
