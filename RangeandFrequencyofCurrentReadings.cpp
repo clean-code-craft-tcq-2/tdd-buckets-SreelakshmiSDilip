@@ -26,12 +26,13 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 			// add it into the range_list.
 			StringandNumRangeOutput rangeFromReadingOutput;
 			RangeValuesAndCount currentRangeandCount;
+			string rangeString;
 
 			currentRangeandCount.rangeLower=  inputValues[iter - length];
 			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
 			currentRangeandCount.count = length;
 
-			string rangeString = GetRangeandCountOutputAsString(currentRangeandCount);
+		        rangeString = GetRangeandCountOutputAsString(currentRangeandCount);
 			rangeFromReadingOutput.rangeValuesAndCount = currentRangeandCount;
 			rangeFromReadingOutput.stringIndexAndCount = rangeString;
 			combinedRangeCountList.push_back(rangeFromReadingOutput);
@@ -53,10 +54,12 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int 
 
 string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount)
 {
-	int rangeLower = currentRangeandCount.rangeLower ;
-	int rangeUpper = currentRangeandCount.rangeUpper ;
-	int count            = currentRangeandCount.count;
-	string temp = "[" + to_string(rangeLower) + "-" + to_string(rangeUpper) + "]" + "->" + to_string(count) ;
+	int rangeLower,rangeUpper,count;
+	string temp;
+	rangeLower = currentRangeandCount.rangeLower ;
+	rangeUpper = currentRangeandCount.rangeUpper ;
+	count            = currentRangeandCount.count;
+	temp = "[" + to_string(rangeLower) + "-" + to_string(rangeUpper) + "]" + "->" + to_string(count) ;
 	if(rangeUpper == rangeLower)
 	{
 		temp = "[" + to_string(rangeLower) + "]"+ "->" + to_string(count);
