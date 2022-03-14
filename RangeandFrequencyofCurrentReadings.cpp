@@ -60,7 +60,7 @@ string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount)
 	string temp = "[" + to_string(rangeLowerBound) + "-" + to_string(rangeUpperBound) + "]" + "->" + to_string(count) ;
 	if(rangeUpper == rangeLower)
 	{
-		temp = "[" + to_string(rangeLower) + "]"+ "->" + to_string(count);
+		temp = "[" + to_string(rangeLowerBound) + "]"+ "->" + to_string(count);
 	}
 	//range_list.push_back(temp);
 	return temp;
