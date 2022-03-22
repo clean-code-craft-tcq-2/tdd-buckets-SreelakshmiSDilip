@@ -62,7 +62,6 @@ string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount)
 	{
 		temp = "[" + to_string(rangeLowerBound) + "]"+ "->" + to_string(count);
 	}
-	//range_list.push_back(temp);
 	return temp;
 }
 
