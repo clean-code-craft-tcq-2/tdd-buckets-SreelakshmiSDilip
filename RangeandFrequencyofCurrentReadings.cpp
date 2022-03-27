@@ -104,7 +104,7 @@ string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount)
 	return temp;
 }
 
-vector<StringandNumRangeOutput> ProcessSensorReadings(vector<int>digitalInput)
+vector<StringandNumRangeOutput> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput)
 {
 	vector<int>AnalogReadingsVec = GetAnalogReadings(digitalInput);
 	vector<StringandNumRangeOutput>rangeandFrequencyfromReadings = GetRangesAndFrequentValue(AnalogReadingsVec);
