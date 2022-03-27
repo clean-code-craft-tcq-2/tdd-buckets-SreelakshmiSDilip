@@ -64,7 +64,6 @@ REQUIRE(convertDigitaltoAnalog(digitalInput3) == analogOutput3);
 }
 
 TEST_CASE("Test whether the given input is within the max limit"){
-{
 	int testInput1 =5000;
 	int testInput2 = 4095;
 	int testInput3 = 0;
