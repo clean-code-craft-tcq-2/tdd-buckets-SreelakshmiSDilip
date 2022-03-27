@@ -19,11 +19,12 @@ bool IsInputValid(int digitalInput)
 
 int convertDigitaltoAnalog(int digitalInput)
 {
-	float analogVal = float( (c_ANALOGMAXCURRENTOUTPUT * digitalInput)/c_DIGIMAXCURRENTINPUT) ;
+	float analogVal = c_MULTIPLIER * digitalInput ;
 	cout<<analogVal;
 	return(round(analogVal));
 
 }
+
 
 vector<int> GetAnalogReadings(vector<int>digitalInput)
 {
