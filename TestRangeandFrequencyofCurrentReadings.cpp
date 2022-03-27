@@ -104,7 +104,7 @@ TEST_CASE("Get the range and count string output for range and count numerical i
 	Expected_range_frequency_string.push_back(range_frequency_string2);
 
 
-	REQUIRE(GetRangeandCountOutputAsString(testInput) == Expected_range_frequency_string);
+	REQUIRE(GetRangeandFrequencyOutputAsString(testInput) == Expected_range_frequency_string);
 }
 	
 
