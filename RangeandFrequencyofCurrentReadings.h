@@ -26,4 +26,4 @@ bool IsInputValid(int digitalInput);
 vector<RangeValuesandFrequency> GetRangesAndFrequentValue(vector<int> inputValues);
 vector<string> GetRangeandFrequencyOutputAsString(vector<RangeValuesandFrequency> RangeandFrequency);
 vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput);
-void PrintRangeandFrequency(vector<string>rangeandFrequencyString)
+void PrintRangeandFrequency(vector<string>rangeandFrequencyString);
