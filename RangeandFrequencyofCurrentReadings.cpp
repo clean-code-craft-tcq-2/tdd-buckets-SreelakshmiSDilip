@@ -42,11 +42,12 @@ vector<int> GetAnalogReadings(vector<int>digitalInput)
 }
 
 
-vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int numOfElements)
+vector<StringandNumRangeOutput> GetRangesAndFrequentValue(vector<int> inputValues)
 {
 	int length = 1;
 	//sort the array
-	sort(inputValues, inputValues + numOfElements);
+	 sort(inputValues.begin(), inputValues.end());
+	int  numOfElements = inputValues.size();
 	//find the ranges
 	vector<StringandNumRangeOutput> combinedRangeCountList;
 	// Traverse the array from first position
