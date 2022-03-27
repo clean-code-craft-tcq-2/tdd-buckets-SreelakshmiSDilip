@@ -6,22 +6,18 @@
 #include <iostream>
 #include "RangeandFrequencyofCurrentReadings.h"
 
-
-
-
-
 TEST_CASE("Convert digital input to analog output"){
-int digitalInput1= 1146;
-int analogInput1 = 3;
-int digitalInput2 =0;
-int analogOutput2 = 0;
-int digitalInput3 = 4094;
-int analogOutput3 = 10;
+	int digitalInput1= 1146;
+	int analogInput1 = 3;
+	int digitalInput2 =0;
+	int analogOutput2 = 0;
+	int digitalInput3 = 4094;
+	int analogOutput3 = 10;
 
 
-REQUIRE(convertDigitaltoAnalog(digitalInput1) == analogInput1);
-REQUIRE(convertDigitaltoAnalog(digitalInput2) == analogOutput2);
-REQUIRE(convertDigitaltoAnalog(digitalInput3) == analogOutput3);
+	REQUIRE(convertDigitaltoAnalog(digitalInput1) == analogInput1);
+	REQUIRE(convertDigitaltoAnalog(digitalInput2) == analogOutput2);
+	REQUIRE(convertDigitaltoAnalog(digitalInput3) == analogOutput3);
 
 }
 
