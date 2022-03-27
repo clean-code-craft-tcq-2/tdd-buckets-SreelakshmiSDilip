@@ -10,7 +10,7 @@
 bool IsInputValid(int digitalInput)
 {
 	bool isValid = false;
-	if((digitalInput >= 0) && (digitalInput <= c_DIGIMAXCURRENTINPUT))
+	if((digitalInput >=  0) && (digitalInput <= c_DIGIMAXCURRENTINPUT))
 	{
 		isValid = true;
 	}
@@ -23,7 +23,6 @@ int convertDigitaltoAnalog(int digitalInput)
 	return(round(analogVal));
 
 }
-
 
 vector<int> GetAnalogReadings(vector<int>digitalInput)
 {
@@ -105,6 +104,21 @@ string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount)
 	return temp;
 }
 
+vector<StringandNumRangeOutput> ProcessSensorReadings(vector<int>digitalInput)
+{
+	vector<int>AnalogReadingsVec = GetAnalogReadings(digitalInput);
+	vector<int>rangeandFrequencyfromReadings = GetRangesAndFrequentValue(AnalogReadingsVec);
+	PrintRangeandFrequency(rangeandFrequencyfromReadings);
+	return rangeandFrequencyfromReadings;
+}
+
+void PrintRangeandFrequency(vector<StringandNumRangeOutput>printRangeandFrequencyInput)
+{
+	for(int l_index = 0;l_index < printRangeandFrequencyInput.size();l_index++)
+	{
+		cout <<printRangeandFrequencyInput[l_index].stringIndexAndCount;
+	}
+}
 
 
 
