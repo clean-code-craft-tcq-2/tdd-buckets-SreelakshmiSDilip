@@ -48,6 +48,57 @@ TEST_CASE("Get the range and count string output for range and count numerical i
 	REQUIRE(GetRangeandCountOutputAsString(testInput3) == "[12]->1");
 }
 
+TEST_CASE("Convert digital input to analog output"){
+int digitalInput1= 1146;
+int analogInput1 = 3;
+int digitalInput2 =0;
+int analogOutput2 = 0;
+int digitalInput3 = 4094;
+int analogOutput3 = 10;
+
+
+REQUIRE(convertDigitaltoAnalog(digitalInput1) == analogInput1);
+REQUIRE(convertDigitaltoAnalog(digitalInput2) == analogOutput2);
+REQUIRE(convertDigitaltoAnalog(digitalInput3) == analogOutput3);
+
+}
+
+TEST_CASE("Test whether the given input is within the max limit");
+{
+	int testInput1 =5000;
+	int testInput2 = 4095;
+	int testInput3 = 0;
+	int testInput4 = 10;
+	REQUIRE(IsInputValid(testInput1) == false);
+	REQUIRE(IsInputValid(testInput2) == false);
+	REQUIRE(IsInputValid(testInput3) == true);
+	REQUIRE(IsInputValid(testInput4) == true);
+}
+
+TEST_CASE("Convert digital input vector to analog output vector"){
+int digitalInput1= 1146;
+int analogOutput1 = 3;
+int digitalInput2 =0;
+int analogOutput2 = 0;
+int digitalInput3 = 4094;
+int analogOutput3 = 10;
+int digitalInput4 = 4096;
+vector<int> testdigitalInputVec, testAnalogOutputVec;
+
+testdigitalInputVec.push_back(digitalInput1);
+testdigitalInputVec.push_back(digitalInput2);
+testdigitalInputVec.push_back(digitalInput3);
+testdigitalInputVec.push_back(digitalInput4);
+
+testAnalogOutputVec.push_back(analogOutput1);
+testAnalogOutputVec.push_back(analogOutput2);
+testAnalogOutputVec.push_back(analogOutput3);
+
+
+REQUIRE(GetAnalogReadings(testdigitalInputVec) == testAnalogOutputVec);
+
+}
+
 
 
 
