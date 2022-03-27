@@ -10,7 +10,7 @@
 bool IsInputValid(int digitalInput)
 {
 	bool isValid = false;
-	if((digitalInput > 0) && (digitalInput <= c_DIGIMAXCURRENTINPUT))
+	if((digitalInput >= 0) && (digitalInput <= c_DIGIMAXCURRENTINPUT))
 	{
 		isValid = true;
 	}
