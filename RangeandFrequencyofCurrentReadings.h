@@ -18,10 +18,7 @@ const float c_DIGIMAXCURRENTINPUT = 4094;
   int count;
 };
 
- struct StringandNumRangeOutput{
-	RangeValuesandFrequency RangeValuesandFrequency;
-	string stringIndexAndCount;
-};
+ 
 
 int convertDigitaltoAnalog(int digitalInput);
 vector<int> GetAnalogReadings(vector<int>digitalInput);
@@ -29,4 +26,4 @@ bool IsInputValid(int digitalInput);
 vector<RangeValuesandFrequency> GetRangesAndFrequentValue(vector<int> inputValues);
 vector<string> GetRangeandFrequencyOutputAsString(vector<RangeValuesandFrequency> RangeandFrequency);
 vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput);
-void PrintRangeandFrequency(vector<RangeValuesandFrequency>printRangeandFrequencyInput);
+void PrintRangeandFrequency(vector<string>rangeandFrequencyString)
