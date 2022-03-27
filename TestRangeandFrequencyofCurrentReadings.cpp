@@ -99,6 +99,38 @@ REQUIRE(GetAnalogReadings(testdigitalInputVec) == testAnalogOutputVec);
 }
 
 
+TEST_CASE("End to end test for getting the range and frequency for a set of 12bit array inputs"){
+
+	vector <int> testInput{0,1023,1023,1300,2023,2025,127,1570,8900};//{0,2,2,3,5,5,0,4}
+	vector<StringandNumRangeOutput> Observed_range_count_list;
+	vector<StringandNumRangeOutput> Expected_range_count_list;
+	StringandNumRangeOutput ExpectedStringAndNumRangeOutput;
+	ExpectedStringAndNumRangeOutput.rangeValuesAndCount = {0,0,2};
+	Expected_range_count_list.push_back(ExpectedStringAndNumRangeOutput);
+	ExpectedStringAndNumRangeOutput.rangeValuesAndCount ={2,3,3};
+	Expected_range_count_list.push_back(ExpectedStringAndNumRangeOutput);
+	ExpectedStringAndNumRangeOutput.rangeValuesAndCount ={4,5,3};
+	Expected_range_count_list.push_back(ExpectedStringAndNumRangeOutput);
+
+	Observed_range_count_list = GetRangesAndFrequentValue(testInput);
+
+	REQUIRE(Observed_range_count_list[0].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[0].rangeValuesAndCount.rangeLower);
+	REQUIRE(Observed_range_count_list[1].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[1].rangeValuesAndCount.rangeLower);
+	REQUIRE(Observed_range_count_list[2].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[2].rangeValuesAndCount.rangeLower);
+
+
+	REQUIRE(Observed_range_count_list[0].rangeValuesAndCount.rangeUpper ==  Expected_range_count_list[0].rangeValuesAndCount.rangeUpper);
+	REQUIRE(Observed_range_count_list[1].rangeValuesAndCount.rangeUpper ==  Expected_range_count_list[1].rangeValuesAndCount.rangeUpper);
+	REQUIRE(Observed_range_count_list[2].rangeValuesAndCount.rangeUpper ==  Expected_range_count_list[2].rangeValuesAndCount.rangeUpper);
+
+	REQUIRE(Observed_range_count_list[0].rangeValuesAndCount.count ==  Expected_range_count_list[0].rangeValuesAndCount.count);
+	REQUIRE(Observed_range_count_list[1].rangeValuesAndCount.count ==  Expected_range_count_list[1].rangeValuesAndCount.count);
+	REQUIRE(Observed_range_count_list[2].rangeValuesAndCount.count ==  Expected_range_count_list[2].rangeValuesAndCount.count);
+
+
+
+	}
+
 
 
 
