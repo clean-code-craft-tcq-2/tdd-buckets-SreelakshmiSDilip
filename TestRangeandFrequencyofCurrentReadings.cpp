@@ -7,7 +7,7 @@
 #include "RangeandFrequencyofCurrentReadings.h"
 
 TEST_CASE("Get the range and frequency of occurance for each range in numerical form for any input"){
-	int testInput[9] = {2,3,4,5,8,9,9,10,12};
+	vector <int> testInput{2,3,4,5,8,9,9,10,12};
 	vector<StringandNumRangeOutput> Observed_range_count_list;
 	vector<StringandNumRangeOutput> Expected_range_count_list;
 	StringandNumRangeOutput ExpectedStringAndNumRangeOutput;
