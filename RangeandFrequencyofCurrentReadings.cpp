@@ -122,7 +122,7 @@ void PrintRangeandFrequency(vector<string>rangeandFrequencyString)
 	int maxIndex = rangeandFrequencyString.size();
 	for(int l_index = 0;l_index < maxIndex;l_index++)
 	{
-		cout <<rangeandFrequencyString[l_index];
+		cout <<rangeandFrequencyString[l_index]<<\n;
 	}
 }
 
