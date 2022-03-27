@@ -12,22 +12,21 @@ const int c_NOTVALID =255;
 const float c_ANALOGMAXCURRENTOUTPUT =10;
 const float c_DIGIMAXCURRENTINPUT = 4094;
 
-
- struct RangeValuesAndCount{
+ struct RangeValuesandFrequency{
   int rangeLower;
   int rangeUpper;
   int count;
 };
 
  struct StringandNumRangeOutput{
-	RangeValuesAndCount rangeValuesAndCount;
+	RangeValuesandFrequency RangeValuesandFrequency;
 	string stringIndexAndCount;
 };
 
 int convertDigitaltoAnalog(int digitalInput);
 vector<int> GetAnalogReadings(vector<int>digitalInput);
 bool IsInputValid(int digitalInput);
-vector<StringandNumRangeOutput> GetRangesAndFrequentValue(vector<int> inputValues);
-string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount );
-void PrintRangeandFrequency(vector<StringandNumRangeOutput>printRangeandFrequencyInput);
-vector<StringandNumRangeOutput> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput); 
+vector<RangeValuesandFrequency> GetRangesAndFrequentValue(vector<int> inputValues);
+vector<string> GetRangeandFrequencyOutputAsString(vector<RangeValuesandFrequency> RangeandFrequency);
+vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput);
+void PrintRangeandFrequency(vector<RangeValuesandFrequency>printRangeandFrequencyInput);
