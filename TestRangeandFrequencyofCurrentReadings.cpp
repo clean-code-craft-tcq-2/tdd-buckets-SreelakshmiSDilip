@@ -58,7 +58,7 @@ REQUIRE(GetAnalogReadings(testdigitalInputVec) == testAnalogOutputVec);
 
 
 TEST_CASE("Get the range and frequency of occurance for each range in numerical form for digital input"){
-	vect<int>testInput{1023,1300,1700,2023,3300,3800,3700,4094,6000}
+	vect<int>testInput{1023,1300,1700,2023,3300,3800,3700,4094,6000};
 	// correspomding analog input would be vector <int> testInput{2,3,4,5,8,9,9,10,12};
 	vector<RangeValuesandFrequency> Observed_range_count_list;
 	vector<RangeValuesandFrequency> Expected_range_count_list;
