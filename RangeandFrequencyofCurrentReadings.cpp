@@ -28,8 +28,9 @@ vector<int> GetAnalogReadings(vector<int>digitalInput)
 {
 	int l_analogOutput;
 	int l_digitalInput;
+	int maxIndex = digitalInput.size();
 	vector <int> analogCurrentReadings;
-	for(int l_index = 0;l_index < digitalInput.size();l_index++)
+	for(int l_index = 0;l_index < maxIndex;l_index++)
 	{
 		l_digitalInput = digitalInput.at(l_index);
 		if(IsInputValid(l_digitalInput) ==  true)
@@ -43,14 +44,14 @@ vector<int> GetAnalogReadings(vector<int>digitalInput)
 }
 
 
-vector<StringandNumRangeOutput> GetRangesAndFrequentValue(vector<int> inputValues)
+vector<RangeValuesandFrequency> GetRangesAndFrequentValue(vector<int> inputValues)
 {
 	int length = 1;
 	//sort the array
 	 sort(inputValues.begin(), inputValues.end());
 	int  numOfElements = inputValues.size();
 	//find the ranges
-	vector<StringandNumRangeOutput> combinedRangeCountList;
+	vector<RangeValuesandFrequency> rangeValuesandFrequency;
 	// Traverse the array from first position
 	for(int iter = 1; iter <= numOfElements; iter++)
 	{
@@ -63,18 +64,15 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(vector<int> inputValue
 			// If the range contains
 			// only one element.
 			// add it into the range_list.
-			
-			StringandNumRangeOutput rangeFromReadingOutput;
-			RangeValuesAndCount currentRangeandCount;
+
+			RangeValuesandFrequency rangeandFrequency;
 			
 
-			currentRangeandCount.rangeLower=  inputValues[iter - length];
-			currentRangeandCount.rangeUpper =  inputValues[iter - 1];
-			currentRangeandCount.count = length;
+			rangeandFrequency.rangeLower=  inputValues[iter - length];
+			rangeandFrequency.rangeUpper =  inputValues[iter - 1];
+			rangeandFrequency.count = length;
 
-			rangeFromReadingOutput.rangeValuesAndCount= currentRangeandCount;
-			rangeFromReadingOutput.stringIndexAndCount= GetRangeandCountOutputAsString(currentRangeandCount);
-			combinedRangeCountList.push_back(rangeFromReadingOutput);
+			rangeValuesandFrequency.push_back(rangeandFrequency);
 
 			// After finding the first range
 			// initialize the length by 1 to
@@ -88,36 +86,43 @@ vector<StringandNumRangeOutput> GetRangesAndFrequentValue(vector<int> inputValue
 	}
 
 
-	return combinedRangeCountList;
+	return rangeValuesandFrequency;
 }
 
-string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount)
+vector<string> GetRangeandFrequencyOutputAsString(vector<RangeValuesandFrequency> RangeandFrequency)
 {
-	int rangeLowerBound = currentRangeandCount.rangeLower ;
-	int rangeUpperBound = currentRangeandCount.rangeUpper ;
-	int count            = currentRangeandCount.count;
-	string temp = "[" + to_string(rangeLowerBound) + "-" + to_string(rangeUpperBound) + "]" + "->" + to_string(count) ;
-	if(rangeUpperBound == rangeLowerBound)
+	vector<string>rangeAndFrequencyString;
+	int maxIndex = RangeandFrequency.size();
+	for(int index = 0; index <  maxIndex;index++)
 	{
-		temp = "[" + to_string(rangeLowerBound) + "]"+ "->" + to_string(count);
+		int rangeLowerBound = RangeandFrequency[index].rangeLower ;
+		int rangeUpperBound = RangeandFrequency[index].rangeUpper ;
+		int count           = RangeandFrequency[index].count;
+		string temp = "[" + to_string(rangeLowerBound) + "-" + to_string(rangeUpperBound) + "]" + "->" + to_string(count) ;
+		if(rangeUpperBound == rangeLowerBound)
+		{
+			temp = "[" + to_string(rangeLowerBound) + "]"+ "->" + to_string(count);
+		}
+		rangeAndFrequencyString.push_back(temp);
 	}
-	return temp;
+	return rangeAndFrequencyString;
 }
 
-vector<StringandNumRangeOutput> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput)
+vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput)
 {
 	vector<int>AnalogReadingsVec = GetAnalogReadings(digitalInput);
-	vector<StringandNumRangeOutput>rangeandFrequencyfromReadings = GetRangesAndFrequentValue(AnalogReadingsVec);
-	PrintRangeandFrequency(rangeandFrequencyfromReadings);
+	vector<RangeValuesandFrequency>rangeandFrequencyfromReadings = GetRangesAndFrequentValue(AnalogReadingsVec);
+	vector<string>rangeandFrequencyString = GetRangeandFrequencyOutputAsString(rangeandFrequencyfromReadings);
+	PrintRangeandFrequency(rangeandFrequencyString);
 	return rangeandFrequencyfromReadings;
 }
 
-
-void PrintRangeandFrequency(vector<StringandNumRangeOutput>printRangeandFrequencyInput)
+void PrintRangeandFrequency(vector<RangeValuesandFrequency>rangeandFrequencyString)
 {
-	for(int l_index = 0;l_index < printRangeandFrequencyInput.size();l_index++)
+	int maxIndex = printRangeandFrequencyInput.size();
+	for(int l_index = 0;l_index < maxIndex;l_index++)
 	{
-		cout <<printRangeandFrequencyInput[l_index].stringIndexAndCount;
+		cout <<printRangeandFrequencyInput[l_index];
 	}
 }
 
