@@ -19,7 +19,7 @@ bool IsInputValid(int digitalInput)
 
 int convertDigitaltoAnalog(int digitalInput)
 {
-	float analogVal = c_MULTIPLIER * digitalInput ;
+	float analogVal =  c_ANALOGMAXCURRENTOUTPUT * digitalInput/c_DIGIMAXCURRENTINPUT ;
 	return(round(analogVal));
 
 }
