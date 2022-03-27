@@ -27,5 +27,5 @@ const int c_DIGIMAXCURRENTINPUT = 4094;
 int convertDigitaltoAnalog(int digitalInput);
 vector<int> GetAnalogReadings(vector<int>digitalInput);
 bool IsInputValid(int digitalInput);
-vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int numOfElements);
+vector<StringandNumRangeOutput> GetRangesAndFrequentValue(vector<int> inputValues);
 string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount );
