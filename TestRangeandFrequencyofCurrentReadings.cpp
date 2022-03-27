@@ -18,7 +18,7 @@ TEST_CASE("Get the range and frequency of occurance for each range in numerical 
 	ExpectedStringAndNumRangeOutput.rangeValuesAndCount ={12,12,1};
 	Expected_range_count_list.push_back(ExpectedStringAndNumRangeOutput);
 
-	Observed_range_count_list = GetRangesAndFrequentValue(testInput,9);
+	Observed_range_count_list = GetRangesAndFrequentValue(testInput);
 
 	REQUIRE(Observed_range_count_list[0].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[0].rangeValuesAndCount.rangeLower);
 	REQUIRE(Observed_range_count_list[1].rangeValuesAndCount.rangeLower ==  Expected_range_count_list[1].rangeValuesAndCount.rangeLower);
