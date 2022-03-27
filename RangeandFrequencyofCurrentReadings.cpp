@@ -19,7 +19,7 @@ bool IsInputValid(int digitalInput)
 
 int convertDigitaltoAnalog(int digitalInput)
 {
-		return((int)round(c_ANALOGMAXCURRENTOUTPUT * (digitalInput)/c_DIGIMAXCURRENTINPUT));
+		return(round(c_ANALOGMAXCURRENTOUTPUT * (digitalInput)/c_DIGIMAXCURRENTINPUT));
 
 }
 
