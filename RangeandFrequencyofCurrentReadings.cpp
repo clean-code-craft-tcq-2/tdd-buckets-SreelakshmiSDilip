@@ -4,6 +4,43 @@
 #include <algorithm>
 #include <iostream>
 #include <string>
+#include<math.h>
+
+
+bool IsInputValid(int digitalInput)
+{
+	bool isValid = false;
+	if((digitalInput > 0) && (digitalInput <= c_DIGIMAXCURRENTINPUT))
+	{
+		isValid = true;
+	}
+	return isValid;
+}
+
+int convertDigitaltoAnalog(int digitalInput)
+{
+		return((int)floor(c_ANALOGMAXCURRENTOUTPUT * (l_digitalInput)/c_DIGIMAXCURRENTINPUT));
+
+}
+
+vector<int> GetAnalogReadings(vector<int>digitalInput)
+{
+	int l_analogOutput;
+	int l_digitalInput;
+	vector <int> analogCurrentReadings;
+	for(int l_index = 0;l_index < digitalInput.size();l_index++)
+	{
+		l_digitalInput = digitalInput.at(l_index);
+		if(IsInputValid(l_digitalInput) ==  true)
+		{
+			l_analogOutput = convertDigitaltoAnalog(l_digitalInput);
+		   analogCurrentReadings.push_back(l_analogOutput);
+		}
+	}
+	return analogCurrentReadings;
+     
+}
+
 
 vector<StringandNumRangeOutput> GetRangesAndFrequentValue(int inputValues[],int numOfElements)
 {
