@@ -107,10 +107,11 @@ string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount)
 vector<StringandNumRangeOutput> ProcessSensorReadings(vector<int>digitalInput)
 {
 	vector<int>AnalogReadingsVec = GetAnalogReadings(digitalInput);
-	vector<int>rangeandFrequencyfromReadings = GetRangesAndFrequentValue(AnalogReadingsVec);
+	vector<StringandNumRangeOutput>rangeandFrequencyfromReadings = GetRangesAndFrequentValue(AnalogReadingsVec);
 	PrintRangeandFrequency(rangeandFrequencyfromReadings);
 	return rangeandFrequencyfromReadings;
 }
+
 
 void PrintRangeandFrequency(vector<StringandNumRangeOutput>printRangeandFrequencyInput)
 {
