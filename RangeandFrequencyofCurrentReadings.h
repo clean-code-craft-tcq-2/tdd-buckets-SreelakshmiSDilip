@@ -30,4 +30,4 @@ bool IsInputValid(int digitalInput);
 vector<StringandNumRangeOutput> GetRangesAndFrequentValue(vector<int> inputValues);
 string GetRangeandCountOutputAsString(RangeValuesAndCount currentRangeandCount );
 void PrintRangeandFrequency(vector<StringandNumRangeOutput>printRangeandFrequencyInput);
-void ProcessSensorReadingsandPrinttheRanges(vector<int>digitalInput);
+void ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput);
