@@ -117,12 +117,12 @@ vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector
 	return rangeandFrequencyfromReadings;
 }
 
-void PrintRangeandFrequency(vector<RangeValuesandFrequency>rangeandFrequencyString)
+void PrintRangeandFrequency(vector<string>rangeandFrequencyString)
 {
-	int maxIndex = printRangeandFrequencyInput.size();
+	int maxIndex = rangeandFrequencyString.size();
 	for(int l_index = 0;l_index < maxIndex;l_index++)
 	{
-		cout <<printRangeandFrequencyInput[l_index];
+		cout <<rangeandFrequencyString[l_index];
 	}
 }
 
