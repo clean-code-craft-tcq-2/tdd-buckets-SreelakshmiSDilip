@@ -8,16 +8,7 @@
 
 
 
-TEST_CASE("Get the range and count string output for range and count numerical input"){
-	
-	RangeValuesAndCount testInput1 = {2,5,4};
-	RangeValuesAndCount testInput2 = {8,10,4};
-	RangeValuesAndCount testInput3 = {12,12,1};
 
-	REQUIRE(GetRangeandCountOutputAsString(testInput1) == "[2-5]->4");
-	REQUIRE(GetRangeandCountOutputAsString(testInput2)  == "[8-10]->4");
-	REQUIRE(GetRangeandCountOutputAsString(testInput3) == "[12]->1");
-}
 
 TEST_CASE("Convert digital input to analog output"){
 int digitalInput1= 1146;
@@ -99,6 +90,27 @@ TEST_CASE("Get the range and frequency of occurance for each range in numerical 
 
 
 }
+
+TEST_CASE("Get the range and count string output for range and count numerical input"){
+
+	vector<RangeValuesandFrequency>testInput;
+	RangeValuesandFrequency rangeValuesandFrequency = {2,5,4};
+	testInput.push_back(rangeValuesandFrequency);
+	rangeValuesandFrequency= {8,10,4};
+	testInput.push_back(rangeValuesandFrequency);
+
+	vector<string> Observed_range_frequency_string;
+	vector<string> Expected_range_frequency_string;
+	string range_frequency_string1 = "[2-5]->4";
+	string range_frequency_string2 = "[8-10]->4";
+
+	Expected_range_frequency_string.push_back(range_frequency_string1);
+	Expected_range_frequency_string.push_back(range_frequency_string2);
+
+
+	REQUIRE(GetRangeandCountOutputAsString(testInput) == Expected_range_frequency_string);
+}
+	
 
 
 
