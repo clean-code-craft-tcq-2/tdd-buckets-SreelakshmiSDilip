@@ -9,8 +9,8 @@
 
 using namespace std;
 const int c_NOTVALID =255;
-const int c_ANALOGMAXCURRENTOUTPUT =10;
-const int c_DIGIMAXCURRENTINPUT = 4094;
+const float c_ANALOGMAXCURRENTOUTPUT =10;
+const float c_DIGIMAXCURRENTINPUT = 4094;
 const float c_MULTIPLIER = c_ANALOGMAXCURRENTOUTPUT/c_DIGIMAXCURRENTINPUT;
 
  struct RangeValuesAndCount{
