@@ -7,7 +7,7 @@
 #include<math.h>
 
 convertToAnalog convertBasedOnSensorType[TOTAL_SENSOR_TYPES] = {convert12bitDigitalInputstoAnalog, convert10bitDigitalInputstoAnalog};
-
+ int m_digiMaxCurrent;
 bool IsInputValid(int digitalInput)
 {
 	bool isValid = false;
