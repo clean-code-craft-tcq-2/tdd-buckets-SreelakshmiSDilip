@@ -27,8 +27,8 @@ int convert12bitDigitalInputstoAnalog(int digitalInput)
 
 int convert10bitDigitalInputtoAnalog(int digitalInput)
 {
-	signed float analogVal =  c_ANALOGMAXCURRENT10BIT * digitalInput/c_DIGIMAXCURRENT10BIT ;
-    analogVal = abs(analogVal - 15)//convert to positive value
+    float analogVal =  c_ANALOGMAXCURRENT10BIT * digitalInput/c_DIGIMAXCURRENT10BIT ;
+    analogVal = abs(analogVal - 15);//convert to positive value
     return(round(analogVal));
 
 }
