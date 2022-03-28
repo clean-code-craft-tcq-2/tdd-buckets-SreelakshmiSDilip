@@ -17,7 +17,7 @@ const int c_NOTVALID =255;
 
  const int TOTAL_SENSOR_TYPES = 2;
 
- int m_analogMaxCurrent;
+
  int m_digiMaxCurrent;
 
  struct RangeValuesandFrequency{
