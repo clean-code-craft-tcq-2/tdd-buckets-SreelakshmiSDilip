@@ -9,21 +9,35 @@
 
 using namespace std;
 const int c_NOTVALID =255;
-const float c_ANALOGMAXCURRENTOUTPUT =10;
-const float c_DIGIMAXCURRENTINPUT = 4094;
+ float c_ANALOGMAXCURRENT12BIT = 10;
+ float c_DIGIMAXCURRENT12BIT = 4094;
+
+  float c_ANALOGMAXCURRENT10BIT = 30;
+ float c_DIGIMAXCURRENT10BIT = 1022;
+
+ int TOTAL_SENSOR_TYPES = 2;
+
+ int m_analogMaxCurrent;
+ int m_digiMaxCurrent;
 
  struct RangeValuesandFrequency{
   int rangeLower;
   int rangeUpper;
   int count;
 };
+ enum SensorType{
+	 e_12bit =0,
+	 e_10bit =1
+ };
 
  
 
-int convertDigitaltoAnalog(int digitalInput);
-vector<int> GetAnalogReadings(vector<int>digitalInput);
+int convert12bitDigitalInputstoAnalog(int digitalInput);
+vector<int> GetAnalogReadings(vector<int>digitalInput,SensorType sensorType);
 bool IsInputValid(int digitalInput);
 vector<RangeValuesandFrequency> GetRangesAndFrequentValue(vector<int> inputValues);
 vector<string> GetRangeandFrequencyOutputAsString(vector<RangeValuesandFrequency> RangeandFrequency);
 vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput);
 void PrintRangeandFrequency(vector<string>rangeandFrequencyString);
+
+typedef int (*convertToAnalog)(int digitalInput);
