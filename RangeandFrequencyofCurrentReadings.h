@@ -35,11 +35,11 @@ const float c_DIGIMAXCURRENT10BIT = 1022;
 int convert12bitDigitalInputstoAnalog(int digitalInput);
 int convert10bitDigitalInputstoAnalog(int digitalInput);
 vector<int> GetAnalogReadings(vector<int>digitalInput,SensorType sensorType);
-bool IsInputValid(int digitalInput);
+bool IsInputValid(int digitalInput,SensorType sensorType);
 vector<RangeValuesandFrequency> GetRangesAndFrequentValue(vector<int> inputValues);
 vector<string> GetRangeandFrequencyOutputAsString(vector<RangeValuesandFrequency> RangeandFrequency);
 vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput,SensorType sensorType);
 void PrintRangeandFrequency(vector<string>rangeandFrequencyString);
-void SetConversionFactorsBasedOnSensorType(SensorType sensorType);
+
 
 typedef int (*convertToAnalog)(int digitalInput);
