@@ -6,7 +6,7 @@
 #include <iostream>
 #include "RangeandFrequencyofCurrentReadings.h"
 
-TEST_CASE("Convert digital input to analog output"){
+TEST_CASE("Convert 12 bit digital input to analog output"){
 	int digitalInput1= 1146;
 	int analogInput1 = 3;
 	int digitalInput2 =0;
@@ -15,9 +15,24 @@ TEST_CASE("Convert digital input to analog output"){
 	int analogOutput3 = 10;
 
 
-	REQUIRE(convertDigitaltoAnalog(digitalInput1) == analogInput1);
-	REQUIRE(convertDigitaltoAnalog(digitalInput2) == analogOutput2);
-	REQUIRE(convertDigitaltoAnalog(digitalInput3) == analogOutput3);
+	REQUIRE(convert12bitDigitalInputstoAnalog(digitalInput1) == analogInput1);
+	REQUIRE(convert12bitDigitalInputstoAnalog(digitalInput2) == analogOutput2);
+	REQUIRE(convert12bitDigitalInputstoAnalog(digitalInput3) == analogOutput3);
+
+}
+
+TEST_CASE("Convert 10 bit digital input to analog output"){
+	int digitalInput1= 1022;
+	int analogInput1 = 15;
+	int digitalInput2 =511;
+	int analogOutput2 = 0;
+	int digitalInput3 = 0;
+	int analogOutput3 = 15;
+
+
+	REQUIRE(convert10bitDigitalInputstoAnalog(digitalInput1) == analogInput1);
+	REQUIRE(convert10bitDigitalInputstoAnalog(digitalInput2) == analogOutput2);
+	REQUIRE(convert10bitDigitalInputstoAnalog(digitalInput3) == analogOutput3);
 
 }
 
@@ -67,8 +82,9 @@ TEST_CASE("Get the range and frequency of occurance for each range in numerical 
 	ExpectedrangeValuesandFrequency= {8,10,4};
 	Expected_range_count_list.push_back(ExpectedrangeValuesandFrequency);
 
+	int SensorType = 0;
 
-	Observed_range_count_list = ProcessSensorReadingsforRangeandFrequency(testInput);
+	Observed_range_count_list = ProcessSensorReadingsforRangeandFrequency(testInput,SensorType);
 
 	REQUIRE(Observed_range_count_list[0].rangeLower ==  Expected_range_count_list[0].rangeLower);
 	REQUIRE(Observed_range_count_list[1].rangeLower ==  Expected_range_count_list[1].rangeLower);
