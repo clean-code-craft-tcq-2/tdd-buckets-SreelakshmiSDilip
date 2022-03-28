@@ -66,8 +66,8 @@ testAnalogOutputVec.push_back(analogOutput1);
 testAnalogOutputVec.push_back(analogOutput2);
 testAnalogOutputVec.push_back(analogOutput3);
 
-int SensorType = 0;
-REQUIRE(GetAnalogReadings(testdigitalInputVec,SensorType) == testAnalogOutputVec);
+
+REQUIRE(GetAnalogReadings(testdigitalInputVec,SensorType::e_12bit) == testAnalogOutputVec);
 
 }
 
@@ -82,9 +82,9 @@ TEST_CASE("Get the range and frequency of occurance for each range in numerical 
 	ExpectedrangeValuesandFrequency= {8,10,4};
 	Expected_range_count_list.push_back(ExpectedrangeValuesandFrequency);
 
-	int SensorType = 0;
 
-	Observed_range_count_list = ProcessSensorReadingsforRangeandFrequency(testInput,SensorType);
+
+	Observed_range_count_list = ProcessSensorReadingsforRangeandFrequency(testInput,SensorType::e_12bit);
 
 	REQUIRE(Observed_range_count_list[0].rangeLower ==  Expected_range_count_list[0].rangeLower);
 	REQUIRE(Observed_range_count_list[1].rangeLower ==  Expected_range_count_list[1].rangeLower);
