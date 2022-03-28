@@ -6,37 +6,49 @@
 #include <string>
 #include<math.h>
 
+convertToAnalog convertBasedOnSensorType[TOTAL_SENSOR_TYPES] = {convert12bitDigitalInputstoAnalog, convert10bitDigitalInputtoAnalog};
 
 bool IsInputValid(int digitalInput)
 {
 	bool isValid = false;
-	if((digitalInput >=  0) && (digitalInput <= c_DIGIMAXCURRENTINPUT))
+	if((digitalInput >=  0) && (digitalInput <= m_digiMaxCurrent))
 	{
 		isValid = true;
 	}
 	return isValid;
 }
 
-int convertDigitaltoAnalog(int digitalInput)
+int convert12bitDigitalInputstoAnalog(int digitalInput)
 {
-	float analogVal =  c_ANALOGMAXCURRENTOUTPUT * digitalInput/c_DIGIMAXCURRENTINPUT ;
+	float analogVal =  c_ANALOGMAXCURRENT12BIT * digitalInput/c_DIGIMAXCURRENT12BIT ;
 	return(round(analogVal));
 
 }
 
-vector<int> GetAnalogReadings(vector<int>digitalInput)
+int convert10bitDigitalInputtoAnalog(int digitalInput)
+{
+	signed float analogVal =  c_ANALOGMAXCURRENT10BIT * digitalInput/c_DIGIMAXCURRENT10BIT ;
+    analogVal = abs(analogVal - 15)//convert to positive value
+    return(round(analogVal));
+
+}
+
+
+vector<int> GetAnalogReadings(vector<int>digitalInput,SensorType sensorType)
 {
 	int l_analogOutput;
 	int l_digitalInput;
 	int maxIndex = digitalInput.size();
 	vector <int> analogCurrentReadings;
+	SetConversionFactorsBasedOnSensorType(sensorType);
 	for(int l_index = 0;l_index < maxIndex;l_index++)
 	{
 		l_digitalInput = digitalInput.at(l_index);
 		if(IsInputValid(l_digitalInput) ==  true)
 		{
-			l_analogOutput = convertDigitaltoAnalog(l_digitalInput);
-		   analogCurrentReadings.push_back(l_analogOutput);
+			convertToAnalog conversion_callback = convertBasedOnSensorType[sensorType];
+			l_analogOutput = conversion_callback(l_digitalInput);
+		    analogCurrentReadings.push_back(l_analogOutput);
 		}
 	}
 	return analogCurrentReadings;
@@ -108,9 +120,9 @@ vector<string> GetRangeandFrequencyOutputAsString(vector<RangeValuesandFrequency
 	return rangeAndFrequencyString;
 }
 
-vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput)
+vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput, SensorType sensorType)
 {
-	vector<int>AnalogReadingsVec = GetAnalogReadings(digitalInput);
+	vector<int>AnalogReadingsVec = GetAnalogReadings(digitalInput,sensorType);
 	vector<RangeValuesandFrequency>rangeandFrequencyfromReadings = GetRangesAndFrequentValue(AnalogReadingsVec);
 	vector<string>rangeandFrequencyString = GetRangeandFrequencyOutputAsString(rangeandFrequencyfromReadings);
 	PrintRangeandFrequency(rangeandFrequencyString);
@@ -124,6 +136,23 @@ void PrintRangeandFrequency(vector<string>rangeandFrequencyString)
 	{
 		cout <<rangeandFrequencyString[l_index]<<"\n";
 	}
+}
+
+void SetConversionFactorsBasedOnSensorType(SensorType sensorType)
+{
+	if(sensorType == SensorType::e_12bit)
+	{
+          m_digiMaxCurrent = c_DIGIMAXCURRENT12BIT ;
+	}
+	else if(sensorType == SensorType::e_10bit)
+	{ 
+          m_digiMaxCurrent = c_DIGIMAXCURRENT10BIT ;
+	}
+	else
+	{
+          m_digiMaxCurrent = 0 ;
+	}
+
 }
 
 
