@@ -9,11 +9,11 @@
 
 using namespace std;
 const int c_NOTVALID =255;
- float c_ANALOGMAXCURRENT12BIT = 10;
- float c_DIGIMAXCURRENT12BIT = 4094;
+const float c_ANALOGMAXCURRENT12BIT = 10;
+const float c_DIGIMAXCURRENT12BIT = 4094;
 
-  float c_ANALOGMAXCURRENT10BIT = 30;
- float c_DIGIMAXCURRENT10BIT = 1022;
+const  float c_ANALOGMAXCURRENT10BIT = 30;
+const float c_DIGIMAXCURRENT10BIT = 1022;
 
  const int TOTAL_SENSOR_TYPES = 2;
 
