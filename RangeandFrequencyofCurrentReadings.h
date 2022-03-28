@@ -18,7 +18,7 @@ const float c_DIGIMAXCURRENT10BIT = 1022;
  const int TOTAL_SENSOR_TYPES = 2;
 
 
- int m_digiMaxCurrent;
+
 
  struct RangeValuesandFrequency{
   int rangeLower;
