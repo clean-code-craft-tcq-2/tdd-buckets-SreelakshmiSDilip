@@ -66,8 +66,8 @@ testAnalogOutputVec.push_back(analogOutput1);
 testAnalogOutputVec.push_back(analogOutput2);
 testAnalogOutputVec.push_back(analogOutput3);
 
-
-REQUIRE(GetAnalogReadings(testdigitalInputVec) == testAnalogOutputVec);
+int SensorType = 0;
+REQUIRE(GetAnalogReadings(testdigitalInputVec,SensorType) == testAnalogOutputVec);
 
 }
 
