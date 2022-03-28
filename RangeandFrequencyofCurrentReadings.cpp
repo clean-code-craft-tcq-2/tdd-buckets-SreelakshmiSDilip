@@ -6,7 +6,7 @@
 #include <string>
 #include<math.h>
 
-convertToAnalog convertBasedOnSensorType[TOTAL_SENSOR_TYPES] = {convert12bitDigitalInputstoAnalog, convert10bitDigitalInputtoAnalog};
+convertToAnalog convertBasedOnSensorType[TOTAL_SENSOR_TYPES] = {convert12bitDigitalInputstoAnalog, convert10bitDigitalInputstoAnalog};
 
 bool IsInputValid(int digitalInput)
 {
@@ -25,7 +25,7 @@ int convert12bitDigitalInputstoAnalog(int digitalInput)
 
 }
 
-int convert10bitDigitalInputtoAnalog(int digitalInput)
+int convert10bitDigitalInputstoAnalog(int digitalInput)
 {
     float analogVal =  c_ANALOGMAXCURRENT10BIT * digitalInput/c_DIGIMAXCURRENT10BIT ;
     analogVal = abs(analogVal - 15);//convert to positive value
