@@ -15,7 +15,7 @@ const int c_NOTVALID =255;
   float c_ANALOGMAXCURRENT10BIT = 30;
  float c_DIGIMAXCURRENT10BIT = 1022;
 
- int TOTAL_SENSOR_TYPES = 2;
+ const int TOTAL_SENSOR_TYPES = 2;
 
  int m_analogMaxCurrent;
  int m_digiMaxCurrent;
@@ -33,11 +33,13 @@ const int c_NOTVALID =255;
  
 
 int convert12bitDigitalInputstoAnalog(int digitalInput);
+int convert10bitDigitalInputstoAnalog(int digitalInput);
 vector<int> GetAnalogReadings(vector<int>digitalInput,SensorType sensorType);
 bool IsInputValid(int digitalInput);
 vector<RangeValuesandFrequency> GetRangesAndFrequentValue(vector<int> inputValues);
 vector<string> GetRangeandFrequencyOutputAsString(vector<RangeValuesandFrequency> RangeandFrequency);
-vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput);
+vector<RangeValuesandFrequency> ProcessSensorReadingsforRangeandFrequency(vector<int>digitalInput,SensorType sensorType);
 void PrintRangeandFrequency(vector<string>rangeandFrequencyString);
+void SetConversionFactorsBasedOnSensorType(SensorType sensorType);
 
 typedef int (*convertToAnalog)(int digitalInput);
