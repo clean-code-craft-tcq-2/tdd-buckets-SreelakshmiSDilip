@@ -41,10 +41,17 @@ TEST_CASE("Test whether the given input is within the max limit"){
 	int testInput2 = 4095;
 	int testInput3 = 0;
 	int testInput4 = 10;
-	REQUIRE(IsInputValid(testInput1) == false);
-	REQUIRE(IsInputValid(testInput2) == false);
-	REQUIRE(IsInputValid(testInput3) == true);
-	REQUIRE(IsInputValid(testInput4) == true);
+	int testInput5 = 1023;
+	REQUIRE(IsInputValid(testInput1,SensorType::e_12bit) == false);
+	REQUIRE(IsInputValid(testInput2,SensorType::e_12bit) == false);
+	REQUIRE(IsInputValid(testInput3,SensorType::e_12bit) == true);
+	REQUIRE(IsInputValid(testInput4,SensorType::e_12bit) == true);
+	
+	
+	REQUIRE(IsInputValid(testInput5,SensorType::e_10bit) == false);
+	REQUIRE(IsInputValid(testInput2,SensorType::e_10bit) == false);
+	REQUIRE(IsInputValid(testInput3,SensorType::e_10bit) == true);
+	REQUIRE(IsInputValid(testInput4,SensorType::e_10bit) == true);
 }
 
 TEST_CASE("Convert digital input vector to analog output vector"){
