@@ -16,7 +16,7 @@ bool IsInputValid(int digitalInput,SensorType sensorType)
 	{
 		digMaxCurrent = c_DIGIMAXCURRENT10BIT;
 	}
-	if((digitalInput >=  0) && (digitalInput <= m_digiMaxCurrent))
+	if((digitalInput >=  0) && (digitalInput <= digMaxCurrent))
 	{
 		isValid = true;
 	}
